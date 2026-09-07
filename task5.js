@@ -1,429 +1,300 @@
 ```javascript
-// ==========================================
-// VARIABLES & DATA TYPES
-// ==========================================
+// Q1: var, let, const
 
-// Q1: Difference between var, let, and const
-// var   -> Function scoped, can be redeclared and reassigned
-// let   -> Block scoped, cannot be redeclared in same scope, can be reassigned
-// const -> Block scoped, cannot be redeclared or reassigned
-
-
-// Q2: Can we redeclare variables?
 var name = "John";
-var name = "David"; // Allowed
-
 let age = 20;
-// let age = 25; // Not allowed in the same scope
-
 const country = "India";
-// const country = "USA"; // Not allowed
 
 
-// Q3: Output
-var x1 = 5;
-let y1 = 10;
-const z1 = 15;
+// Q2: Redeclaration
 
-x1 = 20;
-y1 = 25;
-// z1 = 30; // ERROR: Assignment to constant variable
+var a = 10;
+var a = 20;
 
-console.log("Q3:", x1, y1, z1);
-// Output: Q3: 20 25 15
+let b = 10;
+// let b = 20; // Error
 
-
-// Q4: Declaration vs Initialization
-// Declaration: Creating a variable
-let a1;
-
-// Initialization: Giving a value to a variable
-a1 = 100;
-
-console.log("Q4:", a1);
+const c = 10;
+// const c = 20; // Errorgit co
 
 
-// Q5: Output
-let a2;
-console.log("Q5:", a2);
-// Output: undefined
+// Q3
+
+var x = 5;
+let y = 10;
+const z = 15;
+
+x = 20;
+y = 25;
+
+console.log(x, y, z);
+
+
+// Q4: Declaration and Initialization
+
+let number;
+number = 100;
+
+console.log(number);
+
+
+// Q5
+
+let value;
+console.log(value);
 
 
 // Q6: Hoisting
-// Hoisting means JavaScript moves declarations to the top
-// of their scope during execution.
 
-// Example:
-console.log("Q6:", hoistedVar);
-var hoistedVar = 50;
-// Output: undefined
-
-// Note: let and const are also hoisted,
-// but they cannot be accessed before declaration
-// because of the Temporal Dead Zone (TDZ).
+console.log(test);
+var test = 50;
 
 
-// Q7: null vs undefined
-// undefined -> Variable declared but no value assigned
-// null      -> Intentional empty value
+// Q7: null and undefined
 
-let value1;
-let value2 = null;
+let first;
+let second = null;
 
-console.log("Q7:", value1); // undefined
-console.log("Q7:", value2); // null
+console.log(first);
+console.log(second);
 
 
-// Q8: typeof outputs
-console.log("Q8:", typeof null);
-console.log("Q8:", typeof undefined);
-console.log("Q8:", typeof []);
-console.log("Q8:", typeof {});
+// Q8
 
-// Output:
-// object
-// undefined
-// object
-// object
+console.log(typeof null);
+console.log(typeof undefined);
+console.log(typeof []);
+console.log(typeof {});
 
 
-// ==========================================
-// OPERATORS
-// ==========================================
+// Q9: == and ===
 
-// Q9: == vs ===
-// ==  -> Compares values after type conversion
-// === -> Compares both value and data type
-
-console.log("Q9:", 5 == "5");  // true
-console.log("Q9:", 5 === "5"); // false
+console.log(5 == "5");
+console.log(5 === "5");
 
 
-// Q10: ++i vs i++
-// ++i -> Pre-increment: increases first, then returns value
-// i++ -> Post-increment: returns value first, then increases
+// Q10: ++i and i++
 
-let i1 = 5;
-console.log("Q10:", ++i1); // 6
+let i = 5;
 
-let i2 = 5;
-console.log("Q10:", i2++); // 5
-console.log("Q10:", i2);   // 6
+console.log(++i);
+
+let j = 5;
+
+console.log(j++);
+console.log(j);
 
 
-// Q11: Arithmetic with string
-let x2 = 10;
-let y2 = "5";
+// Q11
 
-console.log("Q11:", x2 + y2); // 105
-console.log("Q11:", x2 - y2); // 5
-console.log("Q11:", x2 * y2); // 50
-console.log("Q11:", x2 / y2); // 2
+let num1 = 10;
+let num2 = "5";
+
+console.log(num1 + num2);
+console.log(num1 - num2);
+console.log(num1 * num2);
+console.log(num1 / num2);
 
 
 // Q12: Logical operators
-// && -> AND
-// || -> OR
-// !  -> NOT
 
-console.log("Q12:", true && true);  // true
-console.log("Q12:", true && false); // false
-console.log("Q12:", true || false); // true
-console.log("Q12:", false || false); // false
-console.log("Q12:", !true);          // false
+console.log(true && true);
+console.log(true || false);
+console.log(!true);
 
 
-// Q13: Output
-console.log("Q13:", 5 > 3 && 10 > 5);
-// true
+// Q13
 
-console.log("Q13:", 5 > 10 || 10 > 5);
-// true
-
-console.log("Q13:", !(5 > 3));
-// false
+console.log(5 > 3 && 10 > 5);
+console.log(5 > 10 || 10 > 5);
+console.log(!(5 > 3));
 
 
 // Q14: Ternary operator
-// condition ? valueIfTrue : valueIfFalse
 
 let age1 = 20;
 
-let result1 = age1 >= 18 ? "Adult" : "Minor";
+let result = age1 >= 18 ? "Adult" : "Minor";
 
-console.log("Q14:", result1);
-// Output: Adult
-
-
-// ==========================================
-// TYPE CASTING
-// ==========================================
-
-// Q15: Implicit vs Explicit type casting
-// Implicit -> JavaScript automatically converts the type
-// Explicit -> Programmer manually converts the type
-
-console.log("Q15 Implicit:", "5" * 2);
-// 10
-
-console.log("Q15 Explicit:", Number("5") + 2);
-// 7
+console.log(result);
 
 
-// Q16: Output
-console.log("Q16:", Number("123"));
-// 123
+// Q15: Type casting
 
-console.log("Q16:", Number("hello"));
-// NaN
+console.log("5" * 2);
+console.log(Number("5") + 2);
 
-console.log("Q16:", Number(true));
-// 1
 
-console.log("Q16:", Number(false));
-// 0
+// Q16
 
-console.log("Q16:", Boolean(0));
-// false
-
-console.log("Q16:", Boolean("hello"));
-// true
+console.log(Number("123"));
+console.log(Number("hello"));
+console.log(Number(true));
+console.log(Number(false));
+console.log(Boolean(0));
+console.log(Boolean("hello"));
 
 
 // Q17: NaN
-// NaN means "Not a Number"
-// It occurs when a mathematical operation cannot produce a valid number.
 
-let result2 = Number("Hello");
+let result1 = Number("hello");
 
-console.log("Q17:", result2);
-// Output: NaN
-
-console.log("Q17 Is NaN:", Number.isNaN(result2));
-// Output: true
+console.log(result1);
 
 
-// ==========================================
-// CONDITIONAL STATEMENTS
-// ==========================================
+// Q18: if-else
 
-// Q18: if-else vs switch
-// if-else -> Used for conditions and ranges
-// switch  -> Used when comparing one value with multiple fixed cases
+let marks = 75;
+
+if (marks >= 50) {
+    console.log("Pass");
+} else {
+    console.log("Fail");
+}
 
 
-// Q19: Output
+// Q19
+
 let age2 = 20;
 
 if (age2 >= 18) {
-    console.log("Q19: Adult");
+    console.log("Adult");
 } else {
-    console.log("Q19: Minor");
+    console.log("Minor");
 }
-
-// Output: Adult
 
 
 // Q20: Nested if
-// An if statement inside another if statement
 
-let age3 = 25;
-let hasLicense = true;
+let age3 = 20;
+let license = true;
 
 if (age3 >= 18) {
-    if (hasLicense) {
-        console.log("Q20: You can drive");
-    } else {
-        console.log("Q20: You need a license");
+    if (license) {
+        console.log("Can Drive");
     }
-} else {
-    console.log("Q20: You are too young to drive");
 }
 
 
-// Q21: Even or Odd using ternary operator
+// Q21: Even or Odd
 
 let number1 = 10;
 
 let evenOdd = number1 % 2 === 0 ? "Even" : "Odd";
 
-console.log("Q21:", evenOdd);
-// Output: Even
+console.log(evenOdd);
 
 
-// ==========================================
-// LOOPS
-// ==========================================
+// Q22: while loop
 
-// Q22: while vs do-while
-// while     -> Checks condition first, then executes
-// do-while  -> Executes at least once, then checks condition
+let count = 1;
+
+while (count <= 3) {
+    console.log(count);
+    count++;
+}
 
 
-// Example:
+// do-while
+
 let count1 = 1;
 
-while (count1 <= 3) {
-    console.log("Q22 while:", count1);
-    count1++;
-}
-
-
-let count2 = 1;
-
 do {
-    console.log("Q22 do-while:", count2);
-    count2++;
-} while (count2 <= 3);
+    console.log(count1);
+    count1++;
+} while (count1 <= 3);
 
 
-// Q23: for loop output
+// Q23: for loop
 
-console.log("Q23:");
-
-for (let i = 1; i <= 5; i++) {
-    console.log(i);
+for (let k = 1; k <= 5; k++) {
+    console.log(k);
 }
 
-// Output:
-// 1
-// 2
-// 3
-// 4
-// 5
 
-
-// Q24: for-of vs for-in
-// for-of -> Gives VALUES
-// for-in -> Gives INDEXES / KEYS
+// Q24: for-of
 
 let fruits = ["Apple", "Banana", "Mango"];
-
-console.log("Q24 for-of:");
 
 for (let fruit of fruits) {
     console.log(fruit);
 }
 
-// Apple
-// Banana
-// Mango
 
-
-console.log("Q24 for-in:");
+// for-in
 
 for (let index in fruits) {
     console.log(index);
 }
 
-// 0
-// 1
-// 2
 
-
-// Q25: Sum of numbers from 1 to 100
+// Q25: Sum 1 to 100
 
 let sum = 0;
 
-for (let i = 1; i <= 100; i++) {
-    sum = sum + i;
+for (let n = 1; n <= 100; n++) {
+    sum = sum + n;
 }
 
-console.log("Q25 Sum:", sum);
-// Output: 5050
+console.log(sum);
 
 
-// ==========================================
-// ARRAYS
-// ==========================================
-
-// Q26: slice vs splice
-// slice  -> Does NOT change original array
-// splice -> CHANGES original array
+// Q26: slice
 
 let arr1 = [1, 2, 3, 4, 5];
 
-let slicedArray = arr1.slice(1, 4);
+console.log(arr1.slice(1, 4));
 
-console.log("Q26 slice:", slicedArray);
-// [2, 3, 4]
 
-console.log("Q26 original:", arr1);
-// [1, 2, 3, 4, 5]
-
+// splice
 
 let arr2 = [1, 2, 3, 4, 5];
 
-let splicedArray = arr2.splice(1, 2);
+arr2.splice(1, 2);
 
-console.log("Q26 splice:", splicedArray);
-// [2, 3]
-
-console.log("Q26 original after splice:", arr2);
-// [1, 4, 5]
+console.log(arr2);
 
 
-// Q27: Array methods
+// Q27
+
 let arr3 = [1, 2, 3];
 
-arr3.push(4);   // [1, 2, 3, 4]
-arr3.pop();     // [1, 2, 3]
-arr3.unshift(0); // [0, 1, 2, 3]
-arr3.shift();    // [1, 2, 3]
+arr3.push(4);
+arr3.pop();
+arr3.unshift(0);
+arr3.shift();
 
-console.log("Q27:", arr3);
-
-// Output:
-// [1, 2, 3]
+console.log(arr3);
 
 
-// ==========================================
-// FUNCTIONS
-// ==========================================
+// Q28: Function declaration
 
-// Q28: Function declaration vs function expression
-
-// Function Declaration
-function addNumbers(a, b) {
+function add(a, b) {
     return a + b;
 }
 
-console.log("Q28 Declaration:", addNumbers(10, 20));
+console.log(add(10, 20));
 
 
-// Function Expression
-const subtractNumbers = function (a, b) {
+// Function expression
+
+const subtract = function(a, b) {
     return a - b;
 };
 
-console.log("Q28 Expression:", subtractNumbers(20, 10));
-
-// Function declaration is hoisted,
-// so it can be called before its declaration.
-
-// Function expression is stored in a variable
-// and cannot be used before initialization.
+console.log(subtract(20, 10));
 
 
 // Q29: Arrow function
-// Arrow functions provide a shorter syntax for functions.
 
-const multiplyNumbers = (a, b) => {
+const multiply = (a, b) => {
     return a * b;
 };
 
-console.log("Q29:", multiplyNumbers(5, 4));
-// Output: 20
+console.log(multiply(5, 4));
 
 
-// Short arrow function
-const square = number => number * number;
-
-console.log("Q29 Square:", square(5));
-// Output: 25
-
-
-// Q30: Function output
+// Q30
 
 function greet() {
     return "Hello";
@@ -431,7 +302,5 @@ function greet() {
 
 let message = greet();
 
-console.log("Q30:", message);
-
-// Output:
-// Hello
+console.log(message);
+```

@@ -11,7 +11,7 @@ const country = "India";
 var a = 10;
 var a = 20;
 
-let b = 10;
+let b = 10
 // let b = 20; // Error
 
 const c = 10;

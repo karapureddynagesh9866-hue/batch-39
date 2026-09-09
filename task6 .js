@@ -11,7 +11,7 @@ function studentResult(name, department, marks) {
 
     let grade;
 
-
+git status
     if (average >= 50) {
 
         result = "PASS";

@@ -22,9 +22,6 @@ git status
 
     }
 
-
-    if (average >= 90) {
-
         grade = "A";
 
     } else if (average >= 75) {
@@ -35,7 +32,7 @@ git status
 
         grade = "C";
 
-    } else if (average >= 50) {
+    } else if (average >= 50) {S
 
         grade = "D";
 
